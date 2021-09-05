@@ -1,6 +1,6 @@
 import os
 import sqlite3
-from utils import *
+from utils import hash
 
 # This function allows us not to have more than one instance of a class
 def singleton(cls):
@@ -83,4 +83,4 @@ class DatabaseDriver(object):
         self.conn.commit()
 
 # Creating an instance of Database class
-a = DatabaseDriver()
+DatabaseDriver = singleton(DatabaseDriver)
